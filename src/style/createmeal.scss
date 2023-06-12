@@ -1,0 +1,21 @@
+.createmeal {
+  &__container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+  }
+
+  &__header {
+    font-size: 3rem;
+    color: #4c4c4c;
+    max-width: 600px;
+    font-weight: 600;
+  }
+  &__text {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    max-width: 500px;
+    color: #6a6a6a;
+    margin: 1.5rem 0rem;
+  }
+}
