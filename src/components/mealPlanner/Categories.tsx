@@ -13,8 +13,16 @@ function Categories() {
 
   useEffect(() => {
     async function getCategories() {
-      const response: any = await supabase.from("mealmaster").select("*");
-      if (response) setMealList(response.data);
+      const response: any = await supabase
+        .from("mealmaster")
+        .select()
+        .eq("isDisabled", "true");
+      if (response) {
+        setMealList(response.data);
+        console.log("first", response.data);
+      } else {
+        setMealList([]);
+      }
     }
     getCategories();
   }, []);
@@ -81,11 +89,7 @@ function Categories() {
                       </div>
                     </>
                   ))}
-                {mealList && getNoMealData.length === 0 ? (
-                  <h2>No Meal List</h2>
-                ) : (
-                  ""
-                )}
+                {mealList.length === 0 && <h2>No Meal List</h2>}
               </div>
             </div>
           </div>

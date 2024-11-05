@@ -27,7 +27,6 @@ export default function SideBarShoppingCart({ isOpen }: ICart) {
     useShoppingCart();
   const [mealDays, setMealDays] = useState<string[]>([]);
   const { register, handleSubmit } = useForm();
-  const [weekplan, setWeekplan] = useState<IMeal[]>();
 
   const getMealDays = () => {
     const days: string[] = [];

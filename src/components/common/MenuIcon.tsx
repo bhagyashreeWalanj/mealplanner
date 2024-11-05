@@ -1,12 +1,10 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { MdOutlineSettings } from "react-icons/md";
-import { GrFavorite } from "react-icons/gr";
-import { RiDeleteBin5Line } from "react-icons/ri";
+
 import { IconType } from "react-icons";
 import { useShoppingCart } from "../../context/ShoppingCartContext";
 import { removeItemFromWeekPlan } from "../../api/posts";
-import { toast } from "react-toastify";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");

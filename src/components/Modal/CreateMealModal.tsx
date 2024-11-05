@@ -119,19 +119,18 @@ const CreateMealModal = ({ status, setStatus }: IProp) => {
                 </p>
               </div>
             </div>
-
-            <button
-              className="bg-red-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="submit"
-            >
-              Submit
-            </button>
             <button
               onClick={() => setStatus(false)}
               className="bg-red-600 hover:bg-blue-700 text-white font-bold py-2 px-4 mx-5 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Close
+            </button>
+            <button
+              className="bg-red-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Submit
             </button>
           </form>
         </CommonModal>

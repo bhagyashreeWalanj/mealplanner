@@ -16,6 +16,7 @@ import About from "./components/About/About";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import MealChart from "./components/PlanChart/MealChart";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import Searchfood from "./components/SearchFood/Searchfood";
 
 const queryClient = new QueryClient({});
 
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/" element={<Home />}></Route>
                 <Route path="/about" element={<About />}></Route>
                 <Route path="/browsefood" element={<MealList />}></Route>
+                <Route path="/searchfood" element={<Searchfood />}></Route>
                 <Route path="/plan" element={<MealChart />}></Route>
                 <Route path="/shoppingcart" element={<ShoppingCart />}></Route>
               </Routes>

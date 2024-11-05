@@ -1,4 +1,5 @@
 import BannerImage from "../assets/home-banner-image.png";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -20,9 +21,12 @@ function Hero() {
               Our meal planner makes it easy to plan delicious, healthy meals
               for you and your family. Save time and money while eating well!
             </p>
-            <button className="mx-auto lg:mx-0 hover:underline bg-[#fe9e0d] text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            <Link to="/browsefood">
+            <button className="mx-auto lg:mx-0 hover:underline bg-[#fe9e0d] text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+            >
               View Meal
             </button>
+            </Link>
           </div>
 
           <div className="w-3/5 md:w-3/5 py-6 contents lg:text-center lg:flex lg:justify-end">

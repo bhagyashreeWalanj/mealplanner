@@ -30,7 +30,7 @@ function FoodList({ category, mealList }: ICategories) {
               </>
             );
           } else {
-            return false;
+            return;
           }
         })}
     </>

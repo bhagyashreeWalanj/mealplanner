@@ -32,19 +32,26 @@ function Navbar() {
     {
       text: "Home",
       icon: <HomeIcon />,
+      path: "/",
     },
     {
-      text: "About",
+      text: "Your Plan",
       icon: <InfoIcon />,
+      path: "/plan",
     },
 
     {
-      text: "Meal Plan",
+      text: "Browse Food",
+      icon: <InfoIcon />,
+      path: "/browsefood",
+    },
+    {
+      text: "Cart",
       icon: <ShoppingCartRoundedIcon />,
+      path: "/browsefood",
     },
   ];
 
-  console.log("path ", currentRoute);
   return (
     <>
       <nav id="header" className=" w-full text-white">
@@ -93,10 +100,15 @@ function Navbar() {
               <List>
                 {menuOptions.map((item) => (
                   <ListItem key={item.text} disablePadding>
-                    <ListItemButton>
-                      <ListItemIcon>{item.icon}</ListItemIcon>
-                      <ListItemText primary={item.text} />
-                    </ListItemButton>
+                    <Link
+                      to={item.path}
+                      onClick={() => setCurrentRoute(item.path)}
+                    >
+                      <ListItemButton>
+                        <ListItemIcon>{item.icon}</ListItemIcon>
+                        <ListItemText primary={item.text} />
+                      </ListItemButton>
+                    </Link>
                   </ListItem>
                 ))}
               </List>
@@ -138,11 +150,20 @@ function Navbar() {
                     currentRoute === "/browsefood" ? "font-bold" : ""
                   }  no-underline hover:text-gray-800 hover:text-underline py-2 px-4`}
                 >
-                  Browse Food
+                  Select Food
+                </Link>
+                <Link
+                  to="/searchfood"
+                  onClick={() => setCurrentRoute("/searchfood")}
+                  className={`inline-block text-black ${
+                    currentRoute === "/searchfood" ? "font-bold" : ""
+                  }  no-underline hover:text-gray-800 hover:text-underline py-2 px-4`}
+                >
+                  Search
                 </Link>
               </li>
             </ul>
-            <div className="flex items-center mr-8">
+            {/* <div className="flex items-center mr-8">
               <div className=" cursor-pointer" onClick={openCart}>
                 <BsCart2 className="text-4xl" />
                 {cartQuantity > 0 && (
@@ -154,7 +175,21 @@ function Navbar() {
                   </div>
                 )}
               </div>
-            </div>
+            </div> */}
+            <li className="font-sans mr-8 block mt-4 lg:inline-block lg:mt-0 lg:ml-6 align-middle text-black hover:text-gray-700">
+              <div
+                role="button"
+                className="relative flex cursor-pointer"
+                onClick={openCart}
+              >
+                <BsCart2 className="text-4xl" />
+                {cartQuantity > 0 && (
+                  <span className="absolute right-0 top-0 rounded-full bg-red-600 w-4 h-4 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">
+                    {cartQuantity}
+                  </span>
+                )}
+              </div>
+            </li>
 
             <button
               id="navAction"
